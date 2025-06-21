@@ -1,7 +1,7 @@
-package com.blazemhan.gptoffice.service;
+package com.blazemhan.office.service;
 
-import com.blazemhan.gptoffice.entity.SupplyItem;
-import com.blazemhan.gptoffice.repository.SupplyItemRepository;
+import com.blazemhan.office.entity.SupplyItem;
+import com.blazemhan.office.repository.SupplyItemRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

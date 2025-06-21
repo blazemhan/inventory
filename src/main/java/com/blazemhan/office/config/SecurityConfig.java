@@ -1,6 +1,6 @@
-package com.blazemhan.gptoffice.config;
+package com.blazemhan.office.config;
 
-import com.blazemhan.gptoffice.service.CustomUserDetailsService;
+import com.blazemhan.office.service.CustomUserDetailsService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;

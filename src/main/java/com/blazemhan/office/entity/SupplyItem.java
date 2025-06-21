@@ -1,20 +1,18 @@
-package com.blazemhan.gptoffice.entity;
+package com.blazemhan.office.entity;
 
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+
 
 @Entity
 @Table(name = "supplyitems")
-@Getter
-@Setter
-    public class SupplyItem {
-        @Id
-        @GeneratedValue(strategy = GenerationType.IDENTITY)
-        private Long id;
 
-        private String name;
+    public class SupplyItem {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String name;
 
     public String getName() {
         return name;
@@ -41,7 +39,13 @@ import lombok.Setter;
     }
 
     private Integer quantity;
-        private Integer threshold;
+    private Integer threshold;
+
+
+   public void decreaseQuantity(int number) {
+      this.quantity = this.quantity - number;
+
     }
 
+}
 

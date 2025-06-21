@@ -1,7 +1,7 @@
-package com.blazemhan.gptoffice.controller;
+package com.blazemhan.office.controller;
 
-import com.blazemhan.gptoffice.entity.SupplyItem;
-import com.blazemhan.gptoffice.service.SupplyItemService;
+import com.blazemhan.office.entity.SupplyItem;
+import com.blazemhan.office.service.SupplyItemService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;

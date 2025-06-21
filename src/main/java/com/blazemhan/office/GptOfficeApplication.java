@@ -1,4 +1,4 @@
-package com.blazemhan.gptoffice;
+package com.blazemhan.office;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -11,3 +11,5 @@ public class GptOfficeApplication {
     }
 
 }
+
+

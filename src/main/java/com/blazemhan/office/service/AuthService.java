@@ -1,7 +1,7 @@
-package com.blazemhan.gptoffice.service;
+package com.blazemhan.office.service;
 
-import com.blazemhan.gptoffice.entity.User;
-import com.blazemhan.gptoffice.repository.UserRepository;
+import com.blazemhan.office.entity.User;
+import com.blazemhan.office.repository.UserRepository;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.password.PasswordEncoder;

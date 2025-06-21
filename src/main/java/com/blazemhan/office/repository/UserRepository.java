@@ -1,6 +1,6 @@
-package com.blazemhan.gptoffice.repository;
+package com.blazemhan.office.repository;
 
-import com.blazemhan.gptoffice.entity.User;
+import com.blazemhan.office.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

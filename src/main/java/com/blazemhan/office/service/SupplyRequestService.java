@@ -1,9 +1,9 @@
-package com.blazemhan.gptoffice.service;
+package com.blazemhan.office.service;
 
-import com.blazemhan.gptoffice.entity.*;
-import com.blazemhan.gptoffice.repository.SupplyItemRepository;
-import com.blazemhan.gptoffice.repository.SupplyRequestRepository;
-import com.blazemhan.gptoffice.repository.UserRepository;
+import com.blazemhan.office.entity.*;
+import com.blazemhan.office.repository.SupplyItemRepository;
+import com.blazemhan.office.repository.SupplyRequestRepository;
+import com.blazemhan.office.repository.UserRepository;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -47,16 +47,18 @@ public class SupplyRequestService {
         public SupplyRequest approveRequest(Long requestId, Long approverId) {
             SupplyRequest request = requestRepository.findById(requestId)
                     .orElseThrow(() -> new RuntimeException("Request not found"));
-
             User approver = userRepository.findById(approverId)
                     .orElseThrow(() -> new RuntimeException("Approver not found"));
 
             if (approver.getRole() != Role.MANAGER) {
                 throw new RuntimeException("Only managers can approve requests");
             }
-
+            SupplyItem item = request.getItem();
+            item.decreaseQuantity(request.getRequestedQuantity());
+            itemRepository.save(item);
             request.setApprovedBy(approver);
             request.setStatus(RequestStatus.APPROVED);
+
 
             return requestRepository.save(request);
         }

@@ -1,17 +1,15 @@
-package com.blazemhan.gptoffice.entity;
+package com.blazemhan.office.entity;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.NonNull;
-import lombok.Setter;
+
 
 import java.time.LocalDateTime;
 
 
 @Entity
 @Table(name = "supplyrequests")
-@Getter
-@Setter
+
+
 public class SupplyRequest {
 
     @Id
@@ -26,7 +24,7 @@ public class SupplyRequest {
     @JoinColumn(name = "supply_item_id")
     private SupplyItem item;
 
-    @NonNull
+
     private Integer requestedQuantity;
 
     @Enumerated(EnumType.STRING)
@@ -52,11 +50,11 @@ public class SupplyRequest {
         this.item = item;
     }
 
-    public @NonNull Integer getRequestedQuantity() {
+    public  Integer getRequestedQuantity() {
         return requestedQuantity;
     }
 
-    public void setRequestedQuantity(@NonNull Integer requestedQuantity) {
+    public void setRequestedQuantity( Integer requestedQuantity) {
         this.requestedQuantity = requestedQuantity;
     }
 

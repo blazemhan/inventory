@@ -1,7 +1,7 @@
-package com.blazemhan.gptoffice.controller;
+package com.blazemhan.office.controller;
 
-import com.blazemhan.gptoffice.entity.User;
-import com.blazemhan.gptoffice.service.AuthService;
+import com.blazemhan.office.entity.User;
+import com.blazemhan.office.service.AuthService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -21,14 +21,13 @@ public class AuthController {
     @PostMapping("/register")
     public ResponseEntity<String> register(@RequestBody User request){
 
-        authService.register(request);
-        return ResponseEntity.ok("User registered successfully");
+        return ResponseEntity.ok( authService.register(request));
 
     }
     @PostMapping("/login")
     public ResponseEntity<String> login(@RequestBody User request){
-        authService.authenticate(request);
-        return ResponseEntity.ok("User logged in successfully");
+
+        return ResponseEntity.ok(authService.authenticate(request));
     }
 }
 

@@ -1,6 +1,6 @@
-package com.blazemhan.gptoffice.service;
+package com.blazemhan.office.service;
 
-import com.blazemhan.gptoffice.repository.UserRepository;
+import com.blazemhan.office.repository.UserRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;

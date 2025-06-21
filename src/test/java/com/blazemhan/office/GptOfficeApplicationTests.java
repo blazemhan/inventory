@@ -1,4 +1,4 @@
-package com.blazemhan.gptoffice;
+package com.blazemhan.office;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
