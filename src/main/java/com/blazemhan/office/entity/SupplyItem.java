@@ -7,12 +7,17 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "supplyitems")
 
-    public class SupplyItem {
+public class SupplyItem {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String name;
+
+
+    private Integer quantity;
+    private Integer threshold;
+
 
     public String getName() {
         return name;
@@ -38,14 +43,18 @@ import jakarta.persistence.*;
         this.threshold = threshold;
     }
 
-    private Integer quantity;
-    private Integer threshold;
-
 
    public void decreaseQuantity(int number) {
       this.quantity = this.quantity - number;
 
     }
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 }
 

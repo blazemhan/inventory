@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class GptOfficeApplication {
+public class OfficeApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(GptOfficeApplication.class, args);
+        SpringApplication.run(OfficeApplication.class, args);
     }
 
 }

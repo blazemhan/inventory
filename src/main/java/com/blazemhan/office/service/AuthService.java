@@ -1,5 +1,7 @@
 package com.blazemhan.office.service;
 
+import com.blazemhan.office.dtos.LoginRequest;
+import com.blazemhan.office.dtos.RegisterRequest;
 import com.blazemhan.office.entity.User;
 import com.blazemhan.office.repository.UserRepository;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -21,7 +23,7 @@ public class AuthService {
         this.authenticationManager = authenticationManager;
     }
 
-    public String register(User request){
+    public String register(RegisterRequest request){
         User user = new User();
         user.setUsername(request.getUsername());
         user.setPassword(passwordEncoder.encode(request.getPassword()));
@@ -30,7 +32,7 @@ public class AuthService {
 
         return "User registered successfully";
     }
-    public String authenticate(User request){
+    public String authenticate(LoginRequest request){
         authenticationManager.authenticate(new UsernamePasswordAuthenticationToken
                 (request.getUsername(), request.getPassword()));
 

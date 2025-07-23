@@ -22,17 +22,25 @@ public class SupplyRequest {
 
     @ManyToOne
     @JoinColumn(name = "supply_item_id")
-    private SupplyItem item;
+    private SupplyItem supplyItem;
 
 
-    private Integer requestedQuantity;
+    private Integer quantityRequested;
 
     @Enumerated(EnumType.STRING)
     private RequestStatus status;
 
     @ManyToOne
     @JoinColumn(name = "linemanager_id")
-    private User approvedBy;
+    private User lineManager;
+
+    @ManyToOne
+    @JoinColumn(name = "storekeeper_id")
+    private User storeKeeper;
+
+    private LocalDateTime requestedAt;
+    private LocalDateTime approvedAt;
+    private LocalDateTime releasedAt;
 
     public User getRequester() {
         return requester;
@@ -43,19 +51,19 @@ public class SupplyRequest {
     }
 
     public SupplyItem getItem() {
-        return item;
+        return supplyItem;
     }
 
     public void setItem(SupplyItem item) {
-        this.item = item;
+        this.supplyItem = item;
     }
 
-    public  Integer getRequestedQuantity() {
-        return requestedQuantity;
+    public Integer getQuantityRequested() {
+        return quantityRequested;
     }
 
-    public void setRequestedQuantity( Integer requestedQuantity) {
-        this.requestedQuantity = requestedQuantity;
+    public void setQuantityRequested(Integer quantityRequested) {
+        this.quantityRequested = quantityRequested;
     }
 
     public RequestStatus getStatus() {
@@ -66,20 +74,20 @@ public class SupplyRequest {
         this.status = status;
     }
 
-    public User getApprovedBy() {
-        return approvedBy;
+    public User getLineManager() {
+        return lineManager;
     }
 
-    public void setApprovedBy(User approvedBy) {
-        this.approvedBy = approvedBy;
+    public void setLineManager(User lineManager) {
+        this.lineManager = lineManager;
     }
 
-    public User getReleasedBy() {
-        return releasedBy;
+    public User getStoreKeeper() {
+        return storeKeeper;
     }
 
-    public void setReleasedBy(User releasedBy) {
-        this.releasedBy = releasedBy;
+    public void setStoreKeeper(User storeKeeper) {
+        this.storeKeeper = storeKeeper;
     }
 
     public LocalDateTime getRequestedAt() {
@@ -106,12 +114,11 @@ public class SupplyRequest {
         this.releasedAt = releasedAt;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "storekeeper_id")
-    private User releasedBy;
+    public Long getId() {
+        return id;
+    }
 
-    private LocalDateTime requestedAt;
-    private LocalDateTime approvedAt;
-    private LocalDateTime releasedAt;
-
+    public void setId(Long id) {
+        this.id = id;
+    }
 }
